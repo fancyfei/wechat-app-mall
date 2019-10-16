@@ -31,6 +31,16 @@
 
 - [WeUI](https://github.com/Tencent/weui-wxss/)
 
+## 初始化测试数据
+
+登录后台，左侧菜单 “工厂设置” --> “数据克隆” --> “将别人的数据克隆给我”
+
+对方商户ID填写  951
+
+点击 “立即克隆” ，然后退出后台重新登录
+
+你将立即享有初始化测试数据，方便你进行测试
+
 ## 关于分类页面
 
 感谢 @yrx0910 编写并提交了分类页面；
@@ -49,6 +59,21 @@
   "text": "分类"
 }
 ```
+
+## 编译说明
+
+本项目使用基于 ES7 的语法，所以请在开发工具中开启 “增强编译”， 否则会提示以下错误：
+
+```
+thirdScriptError 
+ sdk uncaught third Error 
+ regeneratorRuntime is not defined 
+ ReferenceError: regeneratorRuntime is not defined
+```
+
+<img src="https://dcdn.it120.cc/2019/08/28/c5169c15-abda-4e5f-91d5-6dfcfe382fb2.png">
+
+**如果你的开发工具没用看到“增强编译”的选项，请升级开发工具到最新版**
 
 ## 使用说明
 
@@ -186,6 +211,19 @@ module.exports = {
 
   1. 创建订单接口增加 expireMinutes 参数；
   2. 代表多少分钟未支付自动关闭本订单，传 0 不自动关闭订单；
+
+- 我没有那么多分类，首页2行分类能否改成1行？
+
+  打开 /pages/index/index.js 文件，找到下图所示位置，代码
+
+  ```js
+  // 这行代码为显示2行
+  const _n = Math.ceil(categories.length / 2)
+  // 这行代码为显示1行
+  const _n = Math.ceil(categories.length)
+  ```
+
+  <img src="https://dcdn.it120.cc/2019/09/05/31729239-dc73-47f6-938a-9ab2c9c0bfdd.png">
 
 - [更多问题？](https://www.it120.cc/info/all)
 
